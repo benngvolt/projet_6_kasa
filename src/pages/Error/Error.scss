@@ -1,0 +1,40 @@
+.className {
+    margin: 50px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.error404 {
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 288px;
+    color: #FF6060;
+    font-weight: 700;
+}
+
+.errorMsg {
+    margin: 0 auto 182px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 36px;
+    color: #FF6060;
+}
+
+.errorLink {
+    width:100%;
+    display: block;
+    text-decoration: none;
+    margin: auto;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    color: #FF6060;
+    cursor: pointer;
+}
+
+.errorLink:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,31 @@
+header {
+    margin: 0 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0 68px 0;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+nav a {
+    text-decoration: none;
+    font-family:'Montserrat';
+    font-size: 24px;
+    font-weight: 400;
+    color: #FF6060;
+    margin: auto 0;
+    padding-left: 57px;
+    line-height: center;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    height: 68px;
+}

@@ -1,0 +1,52 @@
+.accomListSection {
+    margin: 50px 10%;
+    height: auto;
+    background-color: #F7F7F7;
+    border-radius: 20px;
+}
+
+.accomContainer {
+    display: grid;
+    width: 95%;
+    margin: auto;
+    padding-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.accomCard {
+    aspect-ratio: 1/1;
+    background: linear-gradient(180deg, #FF6060 100%, rgb(0, 0, 0) 80%);
+    border: 0;
+    border-radius: 10px;
+    margin: 7%;
+    color:white;
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+
+.accomFirstImg {
+    width: 100%;
+    height: auto;
+}
+
+.accomFirstImg img {
+    aspect-ratio: 1.5/1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    box-sizing: border-box;
+    border: 0.3rem solid #FF6060;
+}
+
+.accomLink {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    height: 98%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+figure figcaption {
+    padding: 0.3rem;
+}
