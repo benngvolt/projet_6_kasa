@@ -1,32 +1,37 @@
-/* MAIN VERSION ---------992px <= DESKTOP <= 1400px -------------- */
+@mixin superposition {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 20px;
+  }
 
 .banner {
     margin: 0 10%;
     height: 223px;
     position: relative;
-}
 
-.bannerImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
+    &__image {
+        @include superposition;
+        object-fit: cover;
+    }
 
-.bannerText {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: 223px;
-    text-align: center;
-    color: white;
-    font-size: 45px;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    z-index: 1;
-    padding:inherit;
+    &__text {
+        @include superposition;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-family: 'Montserrat';
+        line-height: 223px;
+        text-align: center;
+        color: white;
+        font-size: 45px;
+        font-weight: 400;
+        z-index: 1;
+        padding:inherit;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 24px;
+        }
+    }
 }

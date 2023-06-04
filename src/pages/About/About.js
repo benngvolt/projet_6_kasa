@@ -1,4 +1,4 @@
-import {AboutSection} from "../../components/Collapses/Collapse"
+import AboutSection from "../../components/AboutSection/AboutSection"
 import Banner from "../../components/Banner/Banner"
 import bannerAboutImg from "../../assets/banner_2.png"
 

@@ -1,52 +1,78 @@
-.accomListSection {
+$main-color:#FF6060;
+
+.accomlist {
     margin: 50px 10%;
     height: auto;
     background-color: #F7F7F7;
     border-radius: 20px;
-}
 
-.accomContainer {
-    display: grid;
-    width: 95%;
-    margin: auto;
-    padding-top: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+    @media only screen and (max-width: 767px) {
+        background: none;
+    }
 
-.accomCard {
-    aspect-ratio: 1/1;
-    background: linear-gradient(180deg, #FF6060 100%, rgb(0, 0, 0) 80%);
-    border: 0;
-    border-radius: 10px;
-    margin: 7%;
-    color:white;
-    font-family: 'Montserrat';
-    font-size: 16px;
-}
+    &__container {
+        display: grid;
+        width: 95%;
+        margin: auto;
+        padding: 2%;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+            display: flex; 
+            flex-direction: column;
+            padding: 0;
+        }
 
-.accomFirstImg {
-    width: 100%;
-    height: auto;
-}
+        &__card {
+            aspect-ratio: 1/1;
+            background-color: $main-color;
+            border: 0;
+            border-radius: 10px;
+            margin: 7%;
+            color:white;
+            font-family: 'Montserrat';
+            font-size: 16px;
 
-.accomFirstImg img {
-    aspect-ratio: 1.5/1;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    box-sizing: border-box;
-    border: 0.3rem solid #FF6060;
-}
+            @media only screen and (max-width: 767px) {
+                aspect-ratio: 1.5/1;
+                margin: 3% 0;
+            }
 
-.accomLink {
-    color: inherit;
-    text-decoration: none;
-    display: flex;
-    height: 98%;
-    flex-direction: column;
-    justify-content: space-between;
-}
+            &__link {
+                color: inherit;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%; 
+                
+                &__image {
+                    width: 100%;
+                    height: auto;
 
-figure figcaption {
-    padding: 0.3rem;
+                    img {
+                        aspect-ratio: 1.5/1;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 10px 10px 0 0;
+                        box-sizing: border-box;
+                        border: 0.3rem solid $main-color;
+                        @media only screen and (max-width: 767px) {
+                            aspect-ratio: 2.5/1;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                figcaption {
+                    padding: 0.8rem;
+                    font-size: 18px;
+                }
+            }
+        }
+        &__card:hover {
+            background: linear-gradient(180deg, $main-color 50%, rgba(0, 0, 0, 0.8) 100%);
+        }
+    }
 }

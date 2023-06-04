@@ -1,19 +1,28 @@
 import { Link } from 'react-router-dom'
-import { accomodationList } from "../../datas/accommodationList"
+import {useState, useEffect} from 'react'
 import './AccomList.scss'
 
-function AccomList() {
+function Accomlist() {
+
+    const [accommodationList, setAccommodationList] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/datas/accommodationList.json')
+        .then(res => res.json())
+        .then(data => setAccommodationList(data))
+        .catch((error)=>console.log(error.message))
+    },[]);
 
     return (
-        <section className="accomListSection">
-            <ul className="accomContainer">
-                {accomodationList.map((accomodation) => (
-                    <li key={`${accomodation.id}`} className="accomCard">
-                        <Link to={accomodation.id ? `/accomodation/${accomodation.id}`:"*"} class="accomLink">
-                            <div className='accomFirstImg'>
-                                <img src= {accomodation.pictures[0]} alt={`${accomodation.title}`}/>
+        <section className="accomlist">
+            <ul className="accomlist__container">
+                {accommodationList.map((accommodation) => (
+                    <li key={`${accommodation.id}`} className="accomlist__container__card">
+                        <Link to={accommodation.id ? `/accommodation/${accommodation.id}`:"*"} className="accomlist__container__card__link">
+                            <div className='accomlist__container__card__link__image'>
+                                <img src= {accommodation.pictures[0]} alt={`${accommodation.title}`}/>
                             </div>
-                            <figcaption>{accomodation.title}</figcaption>
+                            <figcaption>{accommodation.title}</figcaption>
                         </Link>
                     </li>
                 ))}
@@ -22,4 +31,4 @@ function AccomList() {
     )
   }
   
-  export default AccomList
+  export default Accomlist
