@@ -1,3 +1,5 @@
+$bannerHeight: 223px;
+
 @mixin superposition {
     width: 100%;
     height: 100%;
@@ -6,12 +8,27 @@
     left: 0;
     margin: 0;
     border-radius: 20px;
+    @media only screen and (max-width: 767px) {
+        border-radius: 10px;
+    }
+  }
+
+@mixin wrapper {
+    margin: 50px 10%;
+    @media only screen and (max-width: 767px) {
+        margin: 10px 4%;
+    }
   }
 
 .banner {
-    margin: 0 10%;
-    height: 223px;
+    @include wrapper;
+    
+    height: $bannerHeight;
     position: relative;
+
+    @media only screen and (max-width: 767px) {
+        height: 111px;  
+    }
 
     &__image {
         @include superposition;
@@ -20,18 +37,23 @@
 
     &__text {
         @include superposition;
-        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.3);
         font-family: 'Montserrat';
-        line-height: 223px;
         text-align: center;
         color: white;
         font-size: 45px;
         font-weight: 400;
         z-index: 1;
-        padding:inherit;
+        padding: 0 2%;
+        box-sizing: border-box;
 
         @media only screen and (max-width: 767px) {
             font-size: 24px;
+            line-height: 100%;
+            box-sizing: border-box;
         }
     }
 }

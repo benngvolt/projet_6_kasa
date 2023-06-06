@@ -1,13 +1,18 @@
 $main-color:#FF6060;
 
-.accomlist {
+@mixin wrapper {
     margin: 50px 10%;
+  }
+
+.accomlist {
+    @include wrapper;
     height: auto;
     background-color: #F7F7F7;
     border-radius: 20px;
 
     @media only screen and (max-width: 767px) {
         background: none;
+        margin: 10px 4%;   
     }
 
     &__container {
@@ -52,22 +57,24 @@ $main-color:#FF6060;
                     height: auto;
 
                     img {
-                        aspect-ratio: 1.5/1;
+                        aspect-ratio: 1.7/1;
                         width: 100%;
                         object-fit: cover;
                         border-radius: 10px 10px 0 0;
                         box-sizing: border-box;
                         border: 0.3rem solid $main-color;
                         @media only screen and (max-width: 767px) {
-                            aspect-ratio: 2.5/1;
+                            aspect-ratio: 2/1;
                             margin: 0;
                         }
                     }
                 }
 
                 figcaption {
-                    padding: 0.8rem;
+                    padding: 0.5% 1% 2% 2%;
+                    box-sizing: border-box;
                     font-size: 18px;
+                    line-height: 90%;
                 }
             }
         }

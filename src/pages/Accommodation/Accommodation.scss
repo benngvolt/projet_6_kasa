@@ -1,5 +1,10 @@
+$main-color:#FF6060;
+
 .accom {
-    margin: 50px 10%;
+    margin: 0 10%;
+    @media only screen and (max-width: 767px) {
+        margin: 10px 4%;
+    }
 
     &__carousel {
         position: relative;
@@ -12,6 +17,10 @@
             object-fit: cover;
             margin: auto;
             border-radius: 25px;
+            @media only screen and (max-width: 767px) {
+                aspect-ratio: 1.3/1;
+                border-radius: 10px;
+            }
         }
 
         &__arrows {
@@ -33,39 +42,68 @@
                 font-size: 79px;
                 padding: 0 2%;
                 cursor: pointer;
+                @media only screen and (max-width: 767px) {
+                    font-size: 30px;
+                }
             }
         }
     }
 
     &__mainDatas {
-        height: 115px;
+        height: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-top: 30px;
+        @media only screen and (max-width: 767px) {
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .leftContainer {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+        }
+
+        .rightContainer {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column; 
+            
+            @media only screen and (max-width: 767px) {
+                flex-direction: row-reverse;
+                margin: 10px 0 0 0 ;
+            }
+        }
 
         &__containers {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
 
             h2 {
                 font-family: 'Montserrat';
                 font-size: 36px;
-                font-weight: 500;
-                color: #FF6060;
+                font-weight: 400;
+                color: $main-color;
                 margin: 0;
-                line-height: 50px;
+                @media only screen and (max-width: 767px) {
+                    font-size: 18px;
+                }
             }
 
             address {
                 font-family: 'Montserrat';
                 font-size: 18px;
-                font-weight: 500;
-                color: #FF6060;
+                font-weight: 400;
+                color: $main-color;
                 line-height: 26px;
                 font-style: normal;
+                margin-bottom: 20px;
+                @media only screen and (max-width: 767px) {
+                    font-size: 14px;
+                    margin: 12px 0;
+                }
             }
 
             &__tags {
@@ -75,17 +113,22 @@
                 padding: 0;
                 list-style: none;
                 margin: 0;
+                flex-wrap: wrap;
 
                 &--style {
-                    color:#FF6060;
+                    color:$main-color;
                     font-family: 'Montserrat';
                     font-size: 14px;
-                    font-weight: 400;
+                    font-weight: 300;
                     color: white;
-                    background-color: #FF6060;
+                    background-color: $main-color;
                     border-radius: 10px;
                     padding: 6px 30px;
-                    margin: 0 10px 0 0;
+                    margin: 0 10px 12px 0;
+                    
+                    @media only screen and (max-width: 767px) {
+                        margin: 0 10px 12px 0;
+                    }
                 }
             }
 
@@ -94,35 +137,61 @@
                 flex-direction: row;
                 justify-content: flex-end;
                 margin: 0;
+                column-gap: 3%;
             
                 &__name {
+                    height: auto;
                     font-family: 'Montserrat';
                     font-size: 18px;
-                    font-weight: 500;
-                    color: #FF6060;
+                    font-weight: 400;
+                    color: $main-color;
                     margin: 0;
+                    @media only screen and (max-width: 767px) {
+                        font-size: 12px;
+                        text-align: right;
+                        padding-right: 6%;
+                    }
                 }
             
                 &__image {
                     width: 64px;
                     height: 64px;
                     border-radius: 50%;
+                    @media only screen and (max-width: 767px) {
+                        width: 32px;
+                        height: 32px;
+                    }
                 }
             }
 
             &__stars {
-                text-align: right;
+                display: flex;
+                vertical-align: middle;
+                justify-content: right;
+                column-gap: 1.5%;
+
+                @media only screen and (max-width: 767px) {
+                    justify-content: left;
+                    line-height: 200%;
+                    width: auto;
+                    column-gap: 5%;
+                }
+                
             
                 &--full {
-                    color: #FF6060;
+                    color: $main-color;
                     font-size: 24px;
-                    margin: 0 1%;
+                    @media only screen and (max-width: 767px) {
+                        font-size: 12px;
+                    }
                 }
             
                 &--remaining {
                     color: #E3E3E3;
                     font-size: 24px;
-                    margin: 0 1%;
+                    @media only screen and (max-width: 767px) {
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -133,6 +202,12 @@
         flex-direction: row;
         justify-content: space-between;
         column-gap: 5%;
-        margin-top: 50px;
+        margin-top: 35px;
+    
+        @media only screen and (max-width: 767px) {
+            flex-direction: column;
+            margin-top: 20px;
+            row-gap: 25px;
+        }
     }
 }

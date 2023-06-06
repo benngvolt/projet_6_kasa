@@ -1,25 +1,12 @@
 import './Accommodation.scss'
+import Collapse from '../../components/Collapse/Collapse';
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { CollapseText, CollapseList } from '../../components/Collapse/Collapse';
 import { accommodationList } from '../../datas/accommodationList.js'
 
 function Accommodation() {
 
-  
-   /* const [accommodationList, setAccommodationList] = useState([]);
-
-    useEffect(() => {
-        fetch("./datas/accommodationList.json")
-        .then(res => res.json())
-        .then(data => setAccommodationList(data))
-        .catch((error)=>console.log(error.message))
-    },[]);*/
-
-    console.log(accommodationList);
-
     const { id } = useParams();
-    console.log(id);
     const index = accommodationList.findIndex((accommodation) => accommodation.id === id);
 
     const [image, updateImage] = useState(0);
@@ -57,7 +44,7 @@ function Accommodation() {
             </figure>
             <div>
                 <div className="accom__mainDatas">
-                    <div className="accom__mainDatas__containers">
+                    <div className="accom__mainDatas__containers leftContainer">
                         <h2>{ accommodation.title } </h2>
                         <address>{ accommodation.location }</address>
                         <ul className="accom__mainDatas__containers__tags">
@@ -66,7 +53,7 @@ function Accommodation() {
                                 </li>))}
                         </ul>
                     </div>
-                    <div className="accom__mainDatas__containers">
+                    <div className="accom__mainDatas__containers rightContainer">
                         <figure className="accom__mainDatas__containers__host">
                             <figcaption className="accom__mainDatas__containers__host__name">{accommodation.host.name}</figcaption>
                             <img src={accommodation.host.picture} alt={`${accommodation.host.name}`} className="accom__mainDatas__containers__host__image"/>
@@ -77,8 +64,8 @@ function Accommodation() {
                     </div>
                 </div>
                 <div className="accom__collapses">
-                    <CollapseText title="Description" description={accommodation.description}/>
-                    <CollapseList title="Équipements" description={accommodation.equipments.map((equipment) => <li>
+                    <Collapse title="Description" description={accommodation.description}/>
+                    <Collapse title="Équipements" description={accommodation.equipments.map((equipment) => <li key={equipment}>
                         {`${equipment}`}</li>)}/>
                 </div>
                     </div>

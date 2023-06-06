@@ -3,29 +3,50 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 40px 0 68px 0;
-}
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;   
-}
+    padding: 40px 0 30px 0;
+    
+    @media only screen and (max-width: 767px) {
+        margin: 10px 4%; 
+        padding: 40px 0 16px 0;  
+    }
 
-nav a {
-    text-decoration: none;
-    font-family:'Montserrat';
-    font-size: 24px;
-    font-weight: 400;
-    color: #FF6060;
-    margin: auto 0;
-    padding-left: 57px;
-    line-height: center;
-}
+    .logo {
+        height: 68px;
 
-nav a:hover {
-    text-decoration: underline;
-}
+        @media only screen and (max-width: 767px) {
+            height: 40px;
+        }
+    }
 
-.logo {
-    height: 68px;
+    nav {
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 767px) {
+            width: 140px;
+        }
+        
+        a {
+            text-decoration: none;
+            font-family:'Montserrat';
+            font-size: 24px;
+            font-weight: 400;
+            color: #FF6060;
+            margin: auto 0;
+            padding-left: 57px;
+            line-height: center;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 12px;
+                text-transform : uppercase;
+                padding-left: 5%;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
