@@ -7,6 +7,7 @@ import Accommodation from './pages/Accommodation/Accommodation'
 import Error from './pages/Error/Error'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import { AccommodationProvider } from './utils/AccomodationContext';
 
 
 const container = document.getElementById('root');
@@ -15,14 +16,16 @@ const root = createRoot(container)
 root.render(
   <React.StrictMode>
     <Router>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/accommodation/:id" element={<Accommodation />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer/>
+      <AccommodationProvider>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/accommodation/:id" element={<Accommodation/>} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer/>
+      </AccommodationProvider>
     </Router>
   </React.StrictMode>,
 )

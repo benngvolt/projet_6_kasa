@@ -1,18 +1,12 @@
 import { Link } from 'react-router-dom'
-import {useState, useEffect} from 'react'
 import './AccomList.scss'
+import { useContext } from 'react'
+import { AccomodationContext } from '../../utils/AccomodationContext'
 
 function Accomlist() {
 
-    const [accommodationList, setAccommodationList] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:3000/datas/accommodationList.json')
-        .then(res => res.json())
-        .then(data => setAccommodationList(data))
-        .catch((error)=>console.log(error.message))
-    },[]);
-
+    const { accommodationList } = useContext(AccomodationContext)
+    
     return (
         <section className="accomlist">
             <ul className="accomlist__container">

@@ -2,9 +2,12 @@ import './Accommodation.scss'
 import Collapse from '../../components/Collapse/Collapse';
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { accommodationList } from '../../datas/accommodationList.js'
+import { useContext } from 'react'
+import { AccomodationContext } from '../../utils/AccomodationContext'
 
 function Accommodation() {
+
+    const { accommodationList } = useContext(AccomodationContext)
 
     const { id } = useParams();
     const index = accommodationList.findIndex((accommodation) => accommodation.id === id);
