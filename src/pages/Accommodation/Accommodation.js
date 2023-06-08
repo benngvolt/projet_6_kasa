@@ -1,4 +1,4 @@
-import './Accommodation.scss'
+import './Accommodation.css'
 import Collapse from '../../components/Collapse/Collapse';
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -13,6 +13,7 @@ function Accommodation() {
     const index = accommodationList.findIndex((accommodation) => accommodation.id === id);
 
     const [image, updateImage] = useState(0);
+    
     const navigate = useNavigate();  
 
     useEffect(() => {

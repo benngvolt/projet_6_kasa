@@ -1,4 +1,4 @@
-import './Collapse.scss'
+import './Collapse.css'
 import { useState } from 'react'
 
 function Collapse ({title, description}) {

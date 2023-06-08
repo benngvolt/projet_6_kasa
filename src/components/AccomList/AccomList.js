@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './AccomList.scss'
+import './AccomList.css'
 import { useContext } from 'react'
 import { AccomodationContext } from '../../utils/AccomodationContext'
 

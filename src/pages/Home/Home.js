@@ -1,19 +1,13 @@
 import AccomList from '../../components/AccomList/AccomList'
 import Banner from '../../components/Banner/Banner'
 import bannerHomeImg from '../../assets/banner.png'
-import {useState, useEffect} from 'react'
+import { useContext } from 'react'
+import { AccomodationContext } from '../../utils/AccomodationContext'
 
 
 function Home() {
 
-    const [accommodationList, setAccommodationList] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:3000/datas/accommodationList.json')
-        .then(res => res.json())
-        .then(data => setAccommodationList(data))
-        .catch((error)=>console.log(error.message))
-    },[]);
+    const { accommodationList } = useContext(AccomodationContext)
     
     return (
         <div>
