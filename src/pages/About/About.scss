@@ -1,0 +1,8 @@
+$bannerHeight: 223px;
+
+.banner {
+
+    @media only screen and (max-width: 767px) {
+        height: $bannerHeight;  
+    }
+}
