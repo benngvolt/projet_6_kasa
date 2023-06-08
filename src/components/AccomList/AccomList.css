@@ -1,0 +1,79 @@
+.accomlist {
+  margin: 50px 10%;
+  height: auto;
+  background-color: #F7F7F7;
+  border-radius: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .accomlist {
+    background: none;
+    margin: 10px 4%;
+  }
+}
+.accomlist__container {
+  display: grid;
+  width: 95%;
+  margin: auto;
+  padding: 2%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media only screen and (max-width: 767px) {
+  .accomlist__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+}
+.accomlist__container__card {
+  aspect-ratio: 1/1;
+  background-color: #FF6060;
+  border: 0;
+  border-radius: 10px;
+  margin: 7%;
+  color: white;
+  font-family: "Montserrat";
+  font-size: 16px;
+}
+@media only screen and (max-width: 767px) {
+  .accomlist__container__card {
+    aspect-ratio: 1.5/1;
+    margin: 3% 0;
+  }
+}
+.accomlist__container__card__link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.accomlist__container__card__link__image {
+  width: 100%;
+  height: auto;
+}
+.accomlist__container__card__link__image img {
+  aspect-ratio: 1.7/1;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  box-sizing: border-box;
+  border: 0.3rem solid #FF6060;
+}
+@media only screen and (max-width: 767px) {
+  .accomlist__container__card__link__image img {
+    aspect-ratio: 2/1;
+    margin: 0;
+  }
+}
+.accomlist__container__card__link figcaption {
+  padding: 0.5% 1% 2% 2%;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 90%;
+}
+.accomlist__container__card:hover {
+  background: linear-gradient(180deg, #FF6060 50%, rgba(0, 0, 0, 0.8) 100%);
+}/*# sourceMappingURL=AccomList.css.map */

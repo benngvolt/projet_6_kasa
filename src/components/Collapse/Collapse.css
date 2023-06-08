@@ -1,0 +1,86 @@
+.collapse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.collapse__toggleBar {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #FF6060;
+  border-radius: 5px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+  .collapse__toggleBar {
+    height: 30px;
+  }
+}
+.collapse__toggleBar--title {
+  font-family: "Montserrat";
+  font-size: 18px;
+  color: white;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .collapse__toggleBar--title {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+  }
+}
+.collapse__toggleBar--chevronDown {
+  font-size: 18px;
+  color: white;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+.collapse__toggleBar--chevronUp {
+  font-size: 18px;
+  color: white;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+.collapse__textBox {
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+  transform-origin: top;
+}
+.collapse__text {
+  margin: 0;
+  height: auto;
+  border-radius: 0 0 5px 5px;
+  background-color: #F6F6F6;
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-weight: 200;
+  color: #FF6060;
+  padding: 35px 20px;
+  box-sizing: border-box;
+  list-style-type: none;
+  overflow: hidden;
+  text-align: justify;
+}
+@media only screen and (max-width: 767px) {
+  .collapse__text {
+    font-size: 12px;
+    padding: 15px 20px;
+  }
+}
+.collapse .boxOpened {
+  max-height: 30rem;
+}
+.collapse .boxClosed {
+  max-height: 0;
+}/*# sourceMappingURL=Collapse.css.map */
