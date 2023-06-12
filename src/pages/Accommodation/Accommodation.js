@@ -1,5 +1,6 @@
 import './Accommodation.css'
 import Collapse from '../../components/Collapse/Collapse';
+import Rating from '../../components/Rating/Rating';
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useContext } from 'react'
@@ -28,8 +29,6 @@ function Accommodation() {
 
     const accommodation = accommodationList[index];
     const imgListLength = accommodation.pictures.length;
-
-    const ratingRange = [1, 2, 3, 4, 5]
 
     return (
         <section className="accom">
@@ -62,9 +61,7 @@ function Accommodation() {
                             <figcaption className="accom__mainDatas__containers__host__name">{accommodation.host.name}</figcaption>
                             <img src={accommodation.host.picture} alt={`${accommodation.host.name}`} className="accom__mainDatas__containers__host__image"/>
                         </figure>
-                        <div className="accom__mainDatas__containers__stars">
-                            {ratingRange.map((ratingElem) => accommodation.rating >= ratingElem ? <span key={ratingElem.toString()}><i className="fa-solid fa-star accom__mainDatas__containers__stars--full"></i></span> : <span key={ratingElem.toString()}><i className="fa-solid fa-star accom__mainDatas__containers__stars--remaining"></i></span> )}
-                        </div>
+                        <Rating accomRating={accommodation.rating} />
                     </div>
                 </div>
                 <div className="accom__collapses">

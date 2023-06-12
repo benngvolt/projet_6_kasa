@@ -1,0 +1,32 @@
+$main-color:#FF6060;
+
+.stars {
+    display: flex;
+    vertical-align: middle;
+    justify-content: right;
+    column-gap: 1.5%;
+
+    @media only screen and (max-width: 767px) {
+        justify-content: left;
+        line-height: 200%;
+        width: auto;
+        column-gap: 5%;
+    }
+    
+
+    &--full {
+        color: $main-color;
+        font-size: 24px;
+        @media only screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+
+    &--remaining {
+        color: #E3E3E3;
+        font-size: 24px;
+        @media only screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+}
